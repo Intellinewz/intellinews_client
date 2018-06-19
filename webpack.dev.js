@@ -23,7 +23,7 @@ webpackDevConfig.plugins = [
 
 webpackDevConfig.module.rules = [
   {
-    tes: /\.scss$/,
+    test: /\.scss$/,
     use: [
       {
         loader: 'style-loader',

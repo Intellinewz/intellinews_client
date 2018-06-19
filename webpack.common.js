@@ -9,7 +9,7 @@ const production = process.env.NODE_ENV === 'production';
 
 const webpackConfig = module.exports = {};
 
-webpackConfig.entry = ['babel-polygill', `${__dirname}/src/main.js`];
+webpackConfig.entry = ['babel-polyfill', `${__dirname}/src/main.js`];
 
 webpackConfig.output = {
   filename: '[name].[hash].js',
