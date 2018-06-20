@@ -3,6 +3,8 @@
 import React from 'react';
 import superagent from 'superagent';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
 import SearchForm from './reddit/searchform.js';
 import SearchResultList from './reddit/searchresultlist.js';
 
@@ -40,6 +42,7 @@ export default class App extends React.Component {
   render() {
     return (
       <main>
+        <div id="logo"><FontAwesomeIcon icon={['fab', 'reddit']} /></div>
         <h1>Reddit Search</h1>
         <SearchForm searchClass={this.state.hasError ? 'error' : 'success'} redditSearch={this.handleSubmit} />
         <ul>
