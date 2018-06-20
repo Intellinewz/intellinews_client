@@ -3,7 +3,8 @@
 import React from 'react';
 import superagent from 'superagent';
 
-import SearchForm from './reddit/searchform.js'; 
+import SearchForm from './reddit/searchform.js';
+import SearchResultList from './reddit/searchresultlist.js';
 
 export default class App extends React.Component {
 
@@ -41,6 +42,9 @@ export default class App extends React.Component {
       <main>
         <h1>Reddit Search</h1>
         <SearchForm searchClass={this.state.hasError ? 'error' : 'success'} redditSearch={this.handleSubmit} />
+        <ul>
+          <SearchResultList searchResults={this.state.topics}/>
+        </ul>
       </main>
     );
   }
