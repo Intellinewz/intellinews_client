@@ -10,7 +10,7 @@ export default class SearchFrom extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <form onSubmit={this.props.redditSearch}>
+      <form className={this.props.searchClass} onSubmit={this.props.redditSearch}>
         <input id="searchFormBoard" type="text" placeholder="Search..."/>
         <input id="searchFormLimit" type="number" min="0" max="100"/>
         <input type="submit"/>

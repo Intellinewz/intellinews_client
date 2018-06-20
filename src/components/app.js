@@ -11,6 +11,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       topics: [],
+      hasError: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,17 +29,18 @@ export default class App extends React.Component {
 
     superagent.get(url)
       .then(results => {
+        this.setState({hasError: false});
         let topics = results.body.data.children;
         this.setState(Object.assign(...this.state, {topics}));
       })
-      .catch(console.error);
+      .catch(err => this.setState({hasError: true}));
   }
 
   render() {
     return (
       <main>
         <h1>Reddit Search</h1>
-        <SearchForm redditSearch={this.handleSubmit} />
+        <SearchForm searchClass={this.state.hasError ? 'error' : 'success'} redditSearch={this.handleSubmit} />
       </main>
     );
   }
