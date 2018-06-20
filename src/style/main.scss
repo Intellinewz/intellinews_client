@@ -1,11 +1,98 @@
-.error #searchFormBoard {
-  outline: solid 1px red;
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: rgb(255,69,0);
+  height: 100%;
+  width: 100%;
 }
 #logo {
-  font-size: 4em;
-  color: red;
+    color: white;
+    font-size: 9em;
+    height: 1em;
+    margin: .5em auto 0 auto;
+    transition: all .8s;
+    width: 1em;
 
   &:hover {
-    color: yellow;
+    color: #333;
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 1.8em;
+  text-align: center;
+  text-transform: uppercase;
+}
+form {
+  text-align: center;
+}
+#searchFormBoard, #searchFormLimit {
+  border: none;
+  outline: none;
+  border-bottom: solid white .5px;
+  padding: 0 0 1px 7px;
+  background: none;
+  margin: 1em .2em;
+  font-size: 1.2em;
+  color: white;
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  } 
+}
+#searchFormBoard {
+border-right: solid white .5px;
+}
+
+#searchFormLimit {
+  border-left: solid white .5px;
+}
+input[type="submit"] {
+  background: #1F7A8C;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.6);
+  color: white;
+  display: block;
+  font-size: .8em;
+  margin: 0 auto;
+  padding: .8em;
+  text-transform: uppercase;
+  transition: all .2s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 1px 2px 6px 2px rgba(0,0,0,0.6);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+  .error #searchFormBoard {
+  outline: solid 1px red;
+}
+
+ul {
+  width: 85%;
+  padding: 0;
+  margin: 0 auto;
+  overflow: auto;
+  text-align: center;
+
+  li {
+    background: white;
+    border: inset 1.5px #1F7A8C;
+    border-radius: 3px;
+    float: left;
+    list-style-type: none;
+    margin: 1%;
+    padding: .5em;
+    width: 23%;
   }
 }

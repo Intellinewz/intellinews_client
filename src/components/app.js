@@ -43,7 +43,7 @@ export default class App extends React.Component {
     return (
       <main>
         <div id="logo"><FontAwesomeIcon icon={['fab', 'reddit']} /></div>
-        <h1>Reddit Search</h1>
+        <h1>What's Happening on the Web?</h1>
         <SearchForm searchClass={this.state.hasError ? 'error' : 'success'} redditSearch={this.handleSubmit} />
         <ul>
           <SearchResultList searchResults={this.state.topics}/>
