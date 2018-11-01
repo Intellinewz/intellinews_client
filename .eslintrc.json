@@ -6,19 +6,11 @@
     "jest": true,
     "es6": true
   },
-  "globals": {
-    "err": true,
-    "req": true,
-    "res": true,
-    "next": true,
-    "__API_URI__": false,
-    "__TITLE__": false,
-    "__DEBUG__": false
-  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6,
@@ -29,8 +21,12 @@
     }
   },
   "rules": {
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
     "no-console": "off",
-    "no-unused-vars": "off",
+    "no-unused-vars": "error",
     "indent": [
       "error",
       2,
