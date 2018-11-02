@@ -4,3 +4,10 @@ export const addTone = payload => {
     payload: payload,
   };
 };
+
+export const deleteTone = payload => {
+  return {
+    type: 'DELETE_TONE',
+    payload: payload,
+  };
+};
