@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// API 
+import {retrieveFeed} from '../../api/api.js';
+
 // DISPATCHERS
 import * as toneActions from '../../store/actions/tones.js';
 
@@ -10,11 +13,12 @@ class Feed extends Component {
     e.preventDefault();
     let selectedTone = e.target.dataset.tone;
     if (!this.props.tones.includes(selectedTone)) { this.props.addTone(selectedTone); }
+    this.retrieveFeed([...this.props.tones, selectedTone]);
   }
 
-  retrieveFeed = () => {
-    // let tones = this.props.tones;
-
+  retrieveFeed = async tones => {
+    let feed = await retrieveFeed(tones);
+    console.log('FEED', feed);
   }
 
   render() {
