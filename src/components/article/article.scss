@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+article.feed-article {
+  border-radius: 5px;
+  box-shadow: -1px 2px 4px 0px rgba(0,0,0,0.1);
+  margin: 1em auto 0 auto;
+  padding: 1em;
+  position: relative;
+  text-align: initial;
+  width: 60%;
+
+&.joy {
+  border: solid 2px $joy;
+}
+&.fear {
+  border: solid 2px $fear;
+}
+&.sadness {
+  border: solid 2px $sadness;
+}
+&.anger {
+  border: solid 2px $anger;
+}
+&.analytical {
+  border: solid 2px $analytical;
+}
+&.confident {
+  border: solid 2px $confident;
+}
+&.tentative {
+  border: solid 2px $tentative;
+}
+  
+  img {
+    border-radius: 5px;
+    float: right;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+  }
+
+  h2 {
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;  
+    }
+  }
+  p span.dom-tone {
+    padding: .3em .6em;
+    border-radius: 5px;
+    font-size: small;
+    color: white;
+
+    &.joy {
+      background: $joy;
+    }
+    &.fear {
+      background: $fear;
+    }
+    &.sadness {
+      background: $sadness;
+    }
+    &.anger {
+      background: $anger;
+    }
+    &.analytical {
+      background: $analytical;
+    }
+    &.confident {
+      background: $confident;
+    }
+    &.tentative {
+      background: $tentative;
+    }
+  }
+}

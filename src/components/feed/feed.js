@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // API 
-import {retrieveFeed} from '../../api/api.js';
+import { retrieveFeed } from '../../api/api.js';
 
 // DISPATCHERS
 import * as toneActions from '../../store/actions/tones.js';
 import * as feedActions from '../../store/actions/feed.js';
+
+// Components
+import Article from '../article/article.js';
+
+// STYLESHEET
+import './feed.scss';
 
 class Feed extends Component {
 
@@ -20,7 +26,9 @@ class Feed extends Component {
     else { 
       this.props.deleteTone(selectedTone);
       let tones = this.props.tones.filter(tone => tone !== selectedTone);
-      this.retrieveFeed(tones);
+      if (tones.length) { this.retrieveFeed(tones); }
+      else { this.props.deleteFeed(); }
+      
     }
   }
 
@@ -45,9 +53,7 @@ class Feed extends Component {
           {
             this.props.feed && this.props.feed.length ?
               this.props.feed.map(article => 
-                <article key={article.title}>
-                  <h2>{article.title}</h2>
-                </article>
+                <Article key={article.title} article={article} />
               )
               :
               null
@@ -67,6 +73,7 @@ const mapDispatchToProps = dispatch => ({
   addTone: payload => dispatch(toneActions.addTone(payload)),
   deleteTone: payload => dispatch(toneActions.deleteTone(payload)),
   addToFeed: payload => dispatch(feedActions.addToFeed(payload)),
+  deleteFeed: () => dispatch(feedActions.deleteFeed()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

@@ -4,3 +4,9 @@ export const addToFeed = payload => {
     payload: payload,
   };
 };
+
+export const deleteFeed = () => {
+  return {
+    type: 'DELETE_FEED',
+  };
+};
