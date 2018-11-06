@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+section.tone-links {
+  margin: 2em auto;
+  width: 50%;
+
+  a.tone {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: .5em;
+    margin: .5em;
+
+    &.joy {
+      border: solid 2px $joy;
+    }
+    &.fear {
+      border: solid 2px $fear;
+    }
+    &.sadness {
+      border: solid 2px $sadness;
+    }
+    &.anger {
+      border: solid 2px $anger;
+    }
+    &.analytical {
+      border: solid 2px $analytical;
+    }
+    &.confident {
+      border: solid 2px $confident;
+    }
+    &.tentative {
+      border: solid 2px $tentative;
+    }
+  }
+}

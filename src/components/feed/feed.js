@@ -11,6 +11,9 @@ import * as feedActions from '../../store/actions/feed.js';
 // Components
 import Article from '../article/article.js';
 
+// STYLESHEET
+import './feed.scss';
+
 class Feed extends Component {
 
   toneClick = e => {
