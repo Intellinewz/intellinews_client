@@ -10,6 +10,9 @@ export default (state = initialState, action) => {
     case ('ADD_TO_FEED'):
       return [...payload];
     
+    case ('DELETE_FEED'):
+      return [];
+    
     default: 
       return state;
   }
