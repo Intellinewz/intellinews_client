@@ -27,19 +27,24 @@ class Feed extends Component {
       this.props.deleteTone(selectedTone);
       let tones = this.props.tones.filter(tone => tone !== selectedTone);
       if (tones.length) { this.retrieveFeed(tones); }
-      else { this.props.deleteFeed(); }
+      else { this.retrieveFeed(); }
       
     }
   }
 
-  retrieveFeed = async tones => {
+  retrieveFeed = async (tones = null) => {
     let feed = await retrieveFeed(tones);
-    this.props.addToFeed(feed.feed);
+    this.props.addToFeed(feed);
   }
 
   render() {
     //detect joy, fear, sadness, anger, analytical, confident and tentative tones
     let tones = ['joy', 'fear', 'sadness', 'anger', 'analytical', 'confident', 'tentative'];
+
+    (this.props.tones && this.props.tones.length) 
+    || (this.props.feed && this.props.feed.length) 
+      ? null : this.retrieveFeed();
+
     return (
       <React.Fragment>
         <section className="tone-links">
