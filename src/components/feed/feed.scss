@@ -9,26 +9,54 @@ section.tone-links {
     cursor: pointer;
     padding: .5em;
     margin: .5em;
+    transition: all ease .3s;
 
     &.joy {
+      &.selected {
+        background: $joy;
+      }
       border: solid 2px $joy;
     }
     &.fear {
+      &.selected {
+        background: $fear;
+        color: white;
+      }
       border: solid 2px $fear;
     }
     &.sadness {
+      &.selected {
+        background: $sadness;
+        color: white;
+      }
       border: solid 2px $sadness;
     }
     &.anger {
+      &.selected {
+        background: $anger;
+        color: white;
+      }
       border: solid 2px $anger;
     }
     &.analytical {
+      &.selected {
+        background: $analytical;
+        color: white;
+      }
       border: solid 2px $analytical;
     }
     &.confident {
+      &.selected {
+        background: $confident;
+        color: white;
+      }
       border: solid 2px $confident;
     }
     &.tentative {
+      &.selected {
+        background: $tentative;
+        color: white;
+      }
       border: solid 2px $tentative;
     }
   }

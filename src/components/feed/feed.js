@@ -49,8 +49,11 @@ class Feed extends Component {
       <React.Fragment>
         <section className="tone-links">
           {
-            tones.map(tone =>
-              <a key={tone} className={`tone ${tone}`} data-tone={tone} onClick={this.toneClick}>{tone}</a>
+            tones.map(tone => {
+              let style = `tone ${tone}`;
+              if (this.props.tones.includes(tone)) {  style = style + ' selected'; }
+              return <a key={tone} className={style} data-tone={tone} onClick={this.toneClick}>{tone}</a>;
+            }
             )
           }
         </section>
