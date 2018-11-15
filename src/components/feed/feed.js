@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// FONT AWESOME
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 // API 
 import { retrieveFeed } from '../../api/api.js';
 
@@ -15,6 +19,10 @@ import Article from '../article/article.js';
 import './feed.scss';
 
 class Feed extends Component {
+
+  state = {
+    showXIcon: false,
+  }
 
   toneClick = e => {
     e.preventDefault();
@@ -51,7 +59,18 @@ class Feed extends Component {
           {
             tones.map(tone => {
               let style = `tone ${tone}`;
-              if (this.props.tones.includes(tone)) {  style = style + ' selected'; }
+              if (this.props.tones.includes(tone)) {  
+                style = style + ' selected';
+                return (
+                  <a key={tone} className={style} data-tone={tone} onClick={this.toneClick}>
+                    {tone} 
+                    <span data-tone={tone}>
+                      <FontAwesomeIcon icon={faTimes} />
+                    </span>
+                  </a>
+                );
+              }
+
               return <a key={tone} className={style} data-tone={tone} onClick={this.toneClick}>{tone}</a>;
             }
             )

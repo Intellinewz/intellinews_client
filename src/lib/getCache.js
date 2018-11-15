@@ -13,5 +13,5 @@ export const getCache = key => {
 const isExpired = payload => {
   let currentTime = new Date().getTime();
   let difference = currentTime - payload.cacheTime;
-  return difference >= 3000000 ? true : false;
+  return difference >= 300000 ? true : false;
 };

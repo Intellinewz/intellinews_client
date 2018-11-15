@@ -11,8 +11,9 @@ export const retrieveFeed = async (tones = null) => {
 
     /* SETTING TIME OF CACHE FOR VALIDATION PURPOSES */
     res.body.cacheTime = new Date().getTime();
-
     localStorage.setItem('intellinewz.feed', JSON.stringify(res.body));
+
+    return res.body.feed;
   }
 
   return tones && tones.length ? feed.feed.filter(article => tones.includes(article.dom_tone.toLowerCase())) : feed.feed;

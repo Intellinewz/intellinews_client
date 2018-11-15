@@ -2,7 +2,7 @@
 
 section.tone-links {
   margin: 2em auto;
-  width: 50%;
+  width: 70%;
 
   a.tone {
     border-radius: 4px;
@@ -12,52 +12,91 @@ section.tone-links {
     transition: all ease .3s;
 
     &.joy {
-      &.selected {
+      &.selected, &:hover {
         background: $joy;
       }
       border: solid 2px $joy;
     }
     &.fear {
-      &.selected {
+      &.selected, &:hover {
         background: $fear;
         color: white;
       }
       border: solid 2px $fear;
     }
     &.sadness {
-      &.selected {
+      &.selected, &:hover {
         background: $sadness;
         color: white;
       }
       border: solid 2px $sadness;
     }
     &.anger {
-      &.selected {
+      &.selected, &:hover {
         background: $anger;
         color: white;
       }
       border: solid 2px $anger;
     }
     &.analytical {
-      &.selected {
+      &.selected, &:hover {
         background: $analytical;
         color: white;
       }
       border: solid 2px $analytical;
     }
     &.confident {
-      &.selected {
+      &.selected, &:hover {
         background: $confident;
         color: white;
       }
       border: solid 2px $confident;
     }
     &.tentative {
-      &.selected {
+      &.selected, &:hover {
         background: $tentative;
         color: white;
       }
       border: solid 2px $tentative;
     }
+
+    &.selected {
+      span {
+        position: relative;
+
+        &:before {
+          bottom: 0;
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+        }
+        
+        svg {
+          margin-left: .3em;
+
+          opacity: 1;
+          -webkit-animation-name: fadeIn; /* Safari 4.0 - 8.0 */
+          -webkit-animation-duration: .3s; /* Safari 4.0 - 8.0 */
+          animation-name: fadeIn;
+          animation-duration: .3s;
+        }
+      }
+    }
   }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
