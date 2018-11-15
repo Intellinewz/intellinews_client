@@ -1,14 +1,18 @@
 @import '../../styles/variables';
 
 section.tone-links {
+  display: flex;
+  flex-wrap: wrap;
   margin: 2em auto;
   width: 70%;
 
   a.tone {
     border-radius: 4px;
     cursor: pointer;
+    flex: 1;
     padding: .5em;
     margin: .5em;
+    width: initial;
     transition: all ease .3s;
 
     &.joy {
